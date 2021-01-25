@@ -1,0 +1,39 @@
+---
+name: cmpsc-100-week-06-worksheets
+break: true
+indent: 4
+---
+
+0_week-1-worksheet-strings.ipynb:
+    ConfirmFileExists
+    MatchFileFragment --fragment "TODO" --count 0 --exact
+    MatchFileRegex --regex "choice\.upper()|choice\.lower()" --count 1
+    MatchFileFragment --fragment "animal.startswith(" --count 1
+    MatchFileFragment --fragment "bad_message.replace(" --count 1
+    MatchFileFragment --fragment "quote.split()" --count 1
+    MatchFileFragment --fragment ".join(words)" --count 1
+    MatchFileFragment --fragment "word.lower()" --count 1
+    MatchFileFragment --fragment "verse.split()" --count 1
+    MatchFileFragment --fragment "chr(" --count 5
+    
+1_week-1-worksheet-io.ipynb:
+    ConfirmFileExists
+    
+f1_week-1-worksheet-letters.py:
+    ConfirmFileExists
+    CountSingleLineComments --language "Python" --count "5"
+    
+f2_week-1-worksheet-yeats.py:
+    ConfirmFileExists
+    CountSingleLineComments --language "Python" --count "5"
+
+MatchCommandFragment --command "python3 f1_week-1-worksheet-letters.py < .inputs/.worksheet-inputs" --fragment "ThE WiZaRd QuIcKlY JiNxEd ThE GnOmEs BeFoRe ThEy vApOrIzEd" --count 1 --exact
+MatchCommandFragment --command "python3 f1_week-1-worksheet-letters.py < .inputs/.worksheet-inputs" --fragment "The string has 18 vowels" --count 1 --exact
+MatchCommandRegex --command "python3 f1_week-1-worksheet-letters.py < .inputs/.worksheet-inputs" --regex "e\s+8" --count 1 --exact
+MatchCommandRegex --command "python3 f1_week-1-worksheet-letters.py < .inputs/.worksheet-inputs" --regex "i\s+4" --count 1 --exact
+MatchCommandRegex --command "python3 f1_week-1-worksheet-letters.py < .inputs/.worksheet-inputs" --regex "o\s+3" --count 1 --exact
+MatchCommandRegex --command "python3 f1_week-1-worksheet-letters.py < .inputs/.worksheet-inputs" --regex "a\s+2" --count 1 --exact
+MatchCommandRegex --command "python3 f1_week-1-worksheet-letters.py < .inputs/.worksheet-inputs" --regex "u\s+1" --count 1 --exact
+MatchCommandFragment --command "python3 f2_week-1-worksheet-yeats.py" --fragment "His changing eyes." --count 1 --exact
+MatchCommandFragment --command "python3 f2_week-1-worksheet-yeats.py" --fragment "10	Lifting his delicate feet." --count 1 --exact
+CountCommandOutput --command "python3 f2_week-1-worksheet-yeats.py" --count 30 --exact

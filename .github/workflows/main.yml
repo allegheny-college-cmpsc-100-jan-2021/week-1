@@ -1,0 +1,59 @@
+  name: GatorGrader
+
+  on:
+    push:
+      branches: [ main ]
+
+  jobs:
+    grade:
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@v2
+        with: 
+          fetch-depth: '0'
+      - name: Setup Python
+        if: always()
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+      - name: Set up grading environment
+        run: |
+          sudo apt-get install rename
+          pip install --upgrade pip
+          pip install pipenv
+          pip install notebook
+          pip install pillow
+          pipenv install --dev --three
+      - name: Grade Day 0
+        run: |
+          cd day-0
+          gradle grade
+          cd ..
+        if: always()
+      - name: Grade Day 1
+        run: |
+          cd day-1
+          gradle grade
+          cd ..
+        if: always()
+      - name: Grade Day 2
+        run: |
+          cd day-2
+          gradle grade
+          cd ..
+        if: always()
+      - name: Grade Day 3
+        run: |
+          cd day-3
+          gradle grade
+          cd ..
+        if: always()
+      - name: Grade Day 4 (Lab)
+        run: |
+          cd day-4
+          gradle grade
+          cd ..
+        if: always()
+        env:   
+         PIPENV_VENV_IN_PROJECT: 1
+         PIPENV_IGNORE_VIRTUALENVS: 1
