@@ -1,0 +1,28 @@
+---
+name: cmpsc-100-week-1-day-1
+break: true
+indent: 4
+---
+
+0_week-1-worksheet-functions.ipynb:
+    ConfirmFileExists
+    MatchFileFragment --fragment "TODO" --count 0 --exact
+    MatchFileFragment --fragment "def square(number)" --count 1 --exact
+    MatchFileFragment --fragment "number * number" --count 1 --exact
+    MatchFileFragment --fragment "The square of 4 is {square(4)}" --count 1 --exact
+    MatchFileFragment --fragment "The square of 8 is {square(8)}" --count 1 --exact
+    MatchFileFragment --fragment "The product of the numbers is 6955200" --count 1 --exact
+    MatchFileFragment --fragment "{multiply(4,8,15,15,23,42)}" --count 1 --exact
+    MatchFileFragment --fragment "return result" --count 1 --exact
+
+f1_week-1-worksheet-codes.py:
+    ConfirmFileExists
+    MatchFileFragment --fragment "TODO" --count 0 --exact
+    MatchFileFragment --fragment "chr(" --count 2
+    MatchFileFragment --fragment "ord(" --count 2
+    MatchFileFragment --fragment "def decipher(enciphered)" --count 1 --exact
+    MatchFileFragment --fragment "def encipher(unciphered)" --count 1 --exact
+    MatchFileFragment --fragment "return " --count 2 --exact
+    
+MatchCommandFragment --command "python3 f1_week-1-worksheet-codes.py < .inputs/.code" --fragment "The first of the undecoded messages read Popeye sits in thunder, Unthought of. From that shoebox of an apartment, From livid curtain’s hue, a tangram emerges a country." --count 1 --exact
+MatchCommandFragment --command "python3 f1_week-1-worksheet-codes.py < .inputs/.code" --fragment "&Xli$jmvwx$sj$xli$yrhigshih$qiwwekiw$vieh$Tsti}i$wmxw$mr$xlyrhiv0$Yrxlsyklx$sj2$Jvsq$xlex$wlsifs|$sj$er$etevxqirx0$Jvsq$pmzmh$gyvxemr”w$lyi0$e$xerkveq$iqivkiw$e$gsyrxv}2" --count 1 --exact
