@@ -1,0 +1,29 @@
+---
+name: cmpsc-100-week-1-day-2
+break: true
+indent: 4
+---
+    
+0_week-1-worksheet-modules.ipynb:
+    ConfirmFileExists
+    MatchFileFragment --fragment "TODO" --count 0 --exact
+    MatchFileFragment --fragment "import random" --count 2 --exact
+    MatchFileFragment --fragment "print(random.randint(" --count 3
+    MatchFileFragment --fragment "random.shuffle(cat_names)" --count 1 --exact
+     
+f1_week-1-worksheet-agenda.py:
+    ConfirmFileExists
+    MatchFileFragment --fragment "TODO" --count 0 --exact
+    MatchFileFragment --fragment "import random" --count 1 --exact
+    MatchFileFragment --fragment "from datetime" --count 1
+    MatchFileFragment --fragment "timedelta" --count 1
+    MatchFileFragment --fragment "return " --count 2 --exact
+    MatchFileFragment --fragment "def " --count 2 --exact
+    CountSingleLineComments --language Python --count 5
+    
+writing/reflection.md:
+    ConfirmFileExists
+    MatchFileFragment --fragment "TODO" --count 0 --exact
+    CountFileWords --count 350
+
+CountCommandOutput --command "python3 f1_week-1-worksheet-agenda.py < .inputs/.worksheet-input" --count 7 --exact

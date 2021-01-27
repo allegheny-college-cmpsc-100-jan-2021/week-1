@@ -230,3 +230,4 @@ tags.tmp
 .gradle/
 build/
 .ipython/
+*.save

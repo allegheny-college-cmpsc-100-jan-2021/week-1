@@ -11,8 +11,8 @@ indent: 4
     MatchFileFragment --fragment "number * number" --count 1 --exact
     MatchFileFragment --fragment "The square of 4 is {square(4)}" --count 1 --exact
     MatchFileFragment --fragment "The square of 8 is {square(8)}" --count 1 --exact
-    MatchFileFragment --fragment "The product of the numbers is 6955200" --count 1 --exact
-    MatchFileFragment --fragment "{multiply(4,8,15,15,23,42)}" --count 1 --exact
+    MatchFileFragment --fragment "The product of the numbers is 7418880" --count 1 --exact
+    MatchFileFragment --fragment "{multiply(4,8,15,16,23,42)}" --count 1 --exact
     MatchFileFragment --fragment "return result" --count 1 --exact
 
 f1_week-1-worksheet-codes.py:
