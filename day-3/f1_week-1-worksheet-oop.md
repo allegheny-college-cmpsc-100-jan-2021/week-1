@@ -15,7 +15,7 @@ Why do we need to `import` `Cat` twice? What's up with this `from` keyword? We n
 1. We use the name of the file where the `class` is located (`Cat.py`)
 1. Next, we use the name of the `class` we'd like to `import`
 
-Following these rules: `import Cat from Cat`.
+Following these rules: `from Cat import Cat`.
 
 Now, we need to complete a function in `Cat.py` to tell if any two cats are friends. Naturally, if two cats are tabby cats, they are 100% friends.
 

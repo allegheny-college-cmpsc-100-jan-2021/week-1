@@ -1,0 +1,4 @@
+G. Wiz;4
+Slippy Toad;6
+Frogger;8
+Lyle;2

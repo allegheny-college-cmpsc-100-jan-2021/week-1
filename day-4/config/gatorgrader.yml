@@ -1,0 +1,23 @@
+---
+name: cmpsc-100-week-1-lab
+break: true
+indent: 4
+---
+
+week-1-lab.py:
+    ConfirmFileExists
+    MatchFileFragment --fragment "TODO" --count 0 --exact
+    MatchFileFragment --fragment "import random" --count 1 --exact
+    MatchFileFragment --fragment "for " --count 1
+    MatchFileFragment --fragment "print(f" --count 5
+    MatchFileFragment --fragment "= fight_monster(" --count 1
+    MatchFileFragment --fragment "= do_roll(" --count 1
+    MatchFileFragment --fragment "= parse_file(" --count 1
+    CountSingleLineComments --language Python --count 10
+
+writing/reflection.md:
+    ConfirmFileExists
+    MatchFileFragment --fragment "TODO" --count 0 --exact
+    CountFileWords --count 300
+
+CountCommandOutput --command "python3 week-1-lab.py" --count 40

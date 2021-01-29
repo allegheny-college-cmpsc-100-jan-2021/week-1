@@ -1,0 +1,5 @@
+Daily Commute;17
+Paper Jam;13
+Spilled Hot Coffee;16
+Horrible Boss;17
+Boring Task;20
